@@ -11,3 +11,16 @@ C:\Users\fernanda1234\Desktop\Nova pasta\obj\Debug\netcoreapp3.1\Nova pasta.Asse
 C:\Users\fernanda1234\Desktop\Nova pasta\obj\Debug\netcoreapp3.1\Nova pasta.dll
 C:\Users\fernanda1234\Desktop\Nova pasta\obj\Debug\netcoreapp3.1\Nova pasta.pdb
 C:\Users\fernanda1234\Desktop\Nova pasta\obj\Debug\netcoreapp3.1\Nova pasta.genruntimeconfig.cache
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\bin\Debug\netcoreapp3.1\Nova pasta.exe
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\bin\Debug\netcoreapp3.1\Nova pasta.deps.json
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\bin\Debug\netcoreapp3.1\Nova pasta.runtimeconfig.json
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\bin\Debug\netcoreapp3.1\Nova pasta.runtimeconfig.dev.json
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\bin\Debug\netcoreapp3.1\Nova pasta.dll
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\bin\Debug\netcoreapp3.1\Nova pasta.pdb
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\obj\Debug\netcoreapp3.1\Nova pasta.csprojAssemblyReference.cache
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\obj\Debug\netcoreapp3.1\Nova pasta.csproj.CoreCompileInputs.cache
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\obj\Debug\netcoreapp3.1\Nova pasta.AssemblyInfoInputs.cache
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\obj\Debug\netcoreapp3.1\Nova pasta.AssemblyInfo.cs
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\obj\Debug\netcoreapp3.1\Nova pasta.dll
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\obj\Debug\netcoreapp3.1\Nova pasta.pdb
+C:\Users\fernanda1234\Desktop\Aula27_28_29_30\obj\Debug\netcoreapp3.1\Nova pasta.genruntimeconfig.cache

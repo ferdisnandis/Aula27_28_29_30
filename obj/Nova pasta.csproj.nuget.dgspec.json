@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fernanda1234\\Desktop\\Nova pasta\\Nova pasta.csproj": {}
+    "C:\\Users\\fernanda1234\\Desktop\\Aula27_28_29_30\\Nova pasta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fernanda1234\\Desktop\\Nova pasta\\Nova pasta.csproj": {
+    "C:\\Users\\fernanda1234\\Desktop\\Aula27_28_29_30\\Nova pasta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fernanda1234\\Desktop\\Nova pasta\\Nova pasta.csproj",
+        "projectUniqueName": "C:\\Users\\fernanda1234\\Desktop\\Aula27_28_29_30\\Nova pasta.csproj",
         "projectName": "Nova pasta",
-        "projectPath": "C:\\Users\\fernanda1234\\Desktop\\Nova pasta\\Nova pasta.csproj",
+        "projectPath": "C:\\Users\\fernanda1234\\Desktop\\Aula27_28_29_30\\Nova pasta.csproj",
         "packagesPath": "C:\\Users\\fernanda1234\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fernanda1234\\Desktop\\Nova pasta\\obj\\",
+        "outputPath": "C:\\Users\\fernanda1234\\Desktop\\Aula27_28_29_30\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fernanda1234\\AppData\\Roaming\\NuGet\\NuGet.Config"
