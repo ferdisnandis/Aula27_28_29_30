@@ -12,13 +12,9 @@ namespace Aula27_28_29_30
         public float Preco { get; set; }
         private const string PATH = "Database/produto.csv";
 
-        //public Produto(int codigo, string nome, float preco) 
-        //{
-        //    this.Codigo = codigo;
-        //        this.Nome = nome;
-        //        this.Preco = preco;
-        // }
-
+        /// <summary>
+        /// Configurar o diretório csv
+        /// </summary>
         public Produto(){
 
             string pasta = PATH.Split('/')[0];
@@ -40,8 +36,10 @@ namespace Aula27_28_29_30
         public List<Produto> Ler(){
             //Criar lista para guardar retorno
             List<Produto> prod = new List<Produto>();
+
             //Lendo as linhas
             string[] linhas = File.ReadAllLines(PATH);
+
             //Varremos nossas linhas
             foreach(string linha in linhas){
                 string[] dado = linha.Split(";");
@@ -53,15 +51,20 @@ namespace Aula27_28_29_30
 
                 prod.Add(p);
             }
+            //Ordernar a lista
             prod = prod.OrderBy(z => z.Nome).ToList();
             return prod;
         }
 
+    
         public List<Produto> Filtrar(string _nome){
             return Ler().FindAll( x => x.Nome == _nome);
         }
 
-        //Remover linhas
+        /// <summary>
+        /// Remover linhas do csv
+        /// </summary>
+        /// <param name="_termo">Utiliza um termo para excluir uma linha específica</param>
         public void Remover(string _termo)
         {
             List<string> linhas = new List<string>();
@@ -83,13 +86,20 @@ namespace Aula27_28_29_30
 
         }
 
-        //Separar as linhas do arquivo em ";" e "="
+        /// <summary>
+        /// Separa o símbolo de = da string do csv
+        /// </summary>
+        /// <param name="dado">Coluna do csv separada</param>
+        /// <returns>string somente com o valor da coluna</returns>
         public string Separar(string dado)
         { 
             return dado.Split("=")[1];
         }
 
-        //1,Sapato,34.50
+        /// <summary>
+        /// Escrever linha no csv
+        /// </summary>
+        /// <returns>Linha com código, nome e preço do produto</returns>
         private string PrepararLinha(Produto produto){
             return $"codigo={produto.Codigo};nome={produto.Nome};preço={produto.Preco};";
         }
