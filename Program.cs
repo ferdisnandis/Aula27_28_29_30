@@ -8,9 +8,9 @@ namespace Aula27_28_29_30
         static void Main(string[] args)
         {
              Produto p = new Produto();
-            p.Codigo = 1;
-            p.Nome = "Sapatilha";
-            p.Preco = 49.99f;
+            p.Codigo = 5;
+            p.Nome = "Welcome to night vale";
+            p.Preco = 39.99f;
 
             p.Cadastrar(p);
 
@@ -20,5 +20,5 @@ namespace Aula27_28_29_30
         
         }
         }
+        }
     }
-}
