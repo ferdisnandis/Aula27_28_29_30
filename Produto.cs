@@ -56,7 +56,37 @@ namespace Aula27_28_29_30
             return prod;
         }
 
+        public void Alterar(Produto _produtoAlterado)
+        {
+        //Lista para salvar as linhas do csv
+            List<string> linhas = new List<string>();
+
+        //Abrir e fechar arquivo de dados
+        using(StreamReader arquivo = new StreamReader(PATH))
+        {
+            //Ler arquivo
+            string linha;
+            while((linha = arquivo.ReadLine()) != null){
+              linhas.Add(linha);  
+            }
+
+            //Remover linha do código
+            linhas.RemoveAll(z => z.Split(";")[0].Contains(_produtoAlterado.Codigo.ToString()));
+
+            //Adicionamos a linha alterada
+            linhas.Add( PrepararLinha(_produtoAlterado) );
+        }
+
+        //Reescrever o arquivo
+        using(StreamWriter output = new StreamWriter(PATH))
+        {
+            output.Write(String.Join(Environment.NewLine, linhas.ToArray()));
+        }
+
+        }
     
+        public void ReescreverCSV(List<string> linhas){
+            using(StreamWriter output = new StreamWriter)
         public List<Produto> Filtrar(string _nome){
             return Ler().FindAll( x => x.Nome == _nome);
         }
