@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Aula27_28_29_30
 {
-    public class Produto
+    public class Produto : IProduto
     {
         public int Codigo { get; set; }
         public string Nome { get; set; }
@@ -28,11 +28,19 @@ namespace Aula27_28_29_30
             }
         }
         
+        /// <summary>
+        /// Adicionar produtos
+        /// </summary>
+        /// <param name="p">Produtos adicionado</param>
         public void Cadastrar(Produto p){
             var linha = new string[] { p.PrepararLinha(p) };
             File.AppendAllLines(PATH, linha);
         }
 
+        /// <summary>
+        /// Ler o que tem no CSV
+        /// </summary>
+        /// <returns>Lista com nome, código e preço</returns>
         public List<Produto> Ler(){
             //Criar lista para guardar retorno
             List<Produto> prod = new List<Produto>();
@@ -56,6 +64,10 @@ namespace Aula27_28_29_30
             return prod;
         }
 
+        /// <summary>
+        /// Alterar um produto existente no CSV
+        /// </summary>
+        /// <param name="_produtoAlterado">Novo produto alterado</param>
         public void Alterar(Produto _produtoAlterado)
         {
         //Lista para salvar as linhas do csv
@@ -65,10 +77,11 @@ namespace Aula27_28_29_30
         using(StreamReader arquivo = new StreamReader(PATH))
         {
             //Ler arquivo
-            string linha;
-            while((linha = arquivo.ReadLine()) != null){
-              linhas.Add(linha);  
-            }
+            Ler();
+            //string linha;
+            //while((linha = arquivo.ReadLine()) != null){
+            //  linhas.Add(linha);  
+            //}
 
             //Remover linha do código
             linhas.RemoveAll(z => z.Split(";")[0].Contains(_produtoAlterado.Codigo.ToString()));
@@ -86,10 +99,33 @@ namespace Aula27_28_29_30
         }
     
         public void ReescreverCSV(List<string> linhas){
-            using(StreamWriter output = new StreamWriter)
+            using(StreamWriter output = new StreamWriter(PATH))
+        {
+            output.Write(String.Join(Environment.NewLine, linhas.ToArray()));
+        }
+        }
+        /// <summary>
+        /// Separa o símbolo de = da string do csv
+        /// </summary>
+        /// <param name="dado">Coluna do csv separada</param>
+        /// <returns>string somente com o valor da coluna</returns>
+        public string Separar(string dado)
+        { 
+            return dado.Split("=")[1];
+        }
+
+        /// <summary>
+        /// Escrever linha no csv
+        /// </summary>
+        /// <returns>Linha com código, nome e preço do produto</returns>
+        private string PrepararLinha(Produto produto){
+            return $"codigo={produto.Codigo};nome={produto.Nome};preço={produto.Preco};";
+        }
+    
         public List<Produto> Filtrar(string _nome){
             return Ler().FindAll( x => x.Nome == _nome);
         }
+
 
         /// <summary>
         /// Remover linhas do csv
@@ -113,25 +149,11 @@ namespace Aula27_28_29_30
         {
             output.Write(String.Join(Environment.NewLine, linhas.ToArray()));
         }
+}
 
-        }
-
-        /// <summary>
-        /// Separa o símbolo de = da string do csv
-        /// </summary>
-        /// <param name="dado">Coluna do csv separada</param>
-        /// <returns>string somente com o valor da coluna</returns>
-        public string Separar(string dado)
-        { 
-            return dado.Split("=")[1];
-        }
-
-        /// <summary>
-        /// Escrever linha no csv
-        /// </summary>
-        /// <returns>Linha com código, nome e preço do produto</returns>
-        private string PrepararLinha(Produto produto){
-            return $"codigo={produto.Codigo};nome={produto.Nome};preço={produto.Preco};";
+        string IProduto.PrepararLinha(Produto produto)
+        {
+            throw new NotImplementedException();
         }
     }
 }
